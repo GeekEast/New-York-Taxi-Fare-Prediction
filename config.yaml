@@ -1,0 +1,50 @@
+trainingInput:
+  scaleTier: CUSTOM
+  masterType: complex_model_m
+  parameterServerType: standard
+  parameterServerCount: 4
+  workerType: complex_model_s
+  workerCount: 5
+  # Documents that you should read on hypertuning configuration:
+  # https://cloud.google.com/ml-engine/reference/rest/v1/projects.jobs#HyperparameterSpec
+  hyperparameters:
+    hyperparameterMetricTag: nyc_fare
+    goal: MINIMIZE # i.e., the goal is to minimize the RMSE
+    # You can adjust maxTrials to balance the cost and the rounds of tuning
+    maxTrials: 15  # 15 by default
+    maxParallelTrials: 6
+    enableTrialEarlyStopping: TRUE
+    params:
+    - parameterName: max_depth
+      # This hyperparamter can be used to control over-fitting,
+      # because a larger depth will make the model to learn relations
+      # in a more specific way for particular training samples
+      #
+      # This entry matches the following code in mle_trainer/train.py
+      #    parser.add_argument(
+      #        '--max_depth',
+      #        default=6,
+      #        type=int
+      #    )
+      type: INTEGER
+      minValue: 4
+      maxValue: 20
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: learning_rate
+      type: DOUBLE
+      minValue: 0.01
+      maxValue: 0.99
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: n_estimators
+      type: INTEGER
+      minValue: 25
+      maxValue: 50
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: subsample
+      type: DOUBLE
+      minValue: 0.1
+      maxValue: 0.9
+      scaleType: UNIT_LINEAR_SCALE
+
+    # TODO: Add more parameters to be tuned by HyperTune
+    # You need to update both config.yaml and mle_trainer/train.py

@@ -1,0 +1,35 @@
+{
+  "referenceGuide":"Cite all the reference sources in the required format. Proper citations will help you avoid unnecessary trouble but does not make it acceptable to copy code. Read the course and university policy statements in this regard. When working with others, limit the discussion to block diagrams and arrows. Do not look at another students' code. Read the JSON semantics and make use of JSON validator from the Internet if needed.",
+  "websites":[
+    {
+      "title":"how to create dummies for certain columns by pandas get_dummies() method?",
+      "url":"https://stackoverflow.com/questions/37265312/how-to-create-dummies-for-certain-columns-by-pandas-get-dummies-method/37269683",
+      "code":"reuse the dummy method to test stage",
+      "description":"reuse the dummy method to test stage"
+    },
+    {
+      "title":"Pandas get_dummies() on multilevel columns",
+      "url":"https://stackoverflow.com/questions/50432189/pandas-get-dummies-on-multilevel-columns",
+      "code":"specify dummy method on some columns",
+      "description":"specify dummy method on some columns"
+    },
+    {
+      "title":"pandas通过loc生成新的列",
+      "url":"https://blog.csdn.net/qq_36523839/article/details/80502574",
+      "code":"create new columns in dataframe",
+      "description":"create new columns in dataframe"
+    },
+    {
+      "title":"Developer Guide",
+      "url":"https://developers.google.com/maps/documentation/directions/intro",
+      "code":"code to use the direction api of gcp",
+      "description":"code to use the direction api of gcp"
+    },
+    {
+      "title":"flask如何转换并返回list",
+      "url":"https://segmentfault.com/q/1010000010444737",
+      "code":"code to return string of list in flask",
+      "description":"code to return string of list in flask"
+    }
+  ]
+}

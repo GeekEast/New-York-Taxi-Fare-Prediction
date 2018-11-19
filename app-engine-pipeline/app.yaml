@@ -1,0 +1,24 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+  python_version: 3
+
+# https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+# TODO: you only need to set the environment variables below
+env_variables:
+  GCP_MLE_MODEL_NAME: "nyc_model"
+  GCP_MLE_MODEL_VERSION: "nyc_model_3"
+
+
+
+
+
